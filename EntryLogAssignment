@@ -1,3 +1,45 @@
-public class EntryLogAssignment {
-    
+public class Stack<Item> implements Iterable<Item>{
+
+    private Node first= null;
+    private Node last = null;
+
+    private class Node{
+        Item item;
+        Node next;
+    }
+    public boolean isEmpty(){
+        return first==null;
+    }
+    public void push(Item item){
+        Node oldfirst = first;
+        first = new Node();
+        first.item = item;
+        first.next = oldfirst;
+    }
+
+    public Item pop(){
+        Item item = first.item;
+        first = first.next;
+        return item;
+    }
+
+    public static void main(String[] args){
+
+        Queue<String> queue = new Queue<String>();
+        Stack<String> stack = new Stack<String>();
+        int InfoCounter = 0;
+        int ErrorCounter = 0;
+        int WarnCounter = 0;
+        int WarnMemoryCounter = 0;
+
+        while(!StdIn.isEmpty()) {
+            String token = StdIn.readLine();
+            queue.enqueue(token);
+        }
+
+        for (String s: queue){
+            String token = queue.dequeue();
+
+        }
+    }
 }
