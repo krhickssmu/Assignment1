@@ -38,12 +38,12 @@ public class Stack<Item>{
         }
         for (String s: queue){
             String token = queue.dequeue();
-            stack.push(token);
             if(token.contains("INFO")){
                 InfoCounter++;
             }
             if(token.contains("ERROR")){
                 ErrorCounter++;
+                stack.push(token);
             }
             if(token.contains("WARN")){
                 WarnCounter++;
